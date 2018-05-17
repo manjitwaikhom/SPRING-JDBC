@@ -10,7 +10,7 @@ public class Lab41 {
 		CustomerDAO cdao=(CustomerDAO)ctx.getBean("cdao");
 		
 		//add customer
-		CustomerTO cto=new CustomerTO(1,"victoria",95602911,"vicbee@atkpm.com","Imphal");
+		CustomerTO cto=new CustomerTO(1,"victoria",956,"vicbee@atkpm.com","Imphal");
 		cdao.addCustomer(cto);
 
 	}
