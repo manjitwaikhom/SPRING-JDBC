@@ -12,7 +12,7 @@
 
 <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-<property name="url" value="jdbc:mysql://db4free.net:3306/manjitwaikhomdb"/>
+<property name="url" value="jdbc:mysql://db4free.net:3306/manjitwaikhomdb?useSSL=FALSE"/>
 <property name="username" value="manjitwaikhom"/>
 <property name="password" value="v2386@MYSQL"/>
 </bean>

@@ -17,14 +17,14 @@ public class JdbcCustomerDAO implements CustomerDAO {
 
 	@Override
 	public List<CustomerTO> getAllCustomers() {
-		String sql="select * from customers";
+		String sql="select * from CUSTOMER";
 		List list=jdbcTemp.query(sql, new CustomerRowMapper());
 		return list;
 	}
 
 	@Override
 	public CustomerTO getCustomerByCid(int cid) {
-		String sql="select * from customers where cid=?";
+		String sql="select * from CUSTOMER where cid=?";
 		Object args[]= {cid};
 		CustomerTO cto=(CustomerTO)jdbcTemp.queryForObject(sql, args,new CustomerRowMapper());
 		return cto;
@@ -33,7 +33,7 @@ public class JdbcCustomerDAO implements CustomerDAO {
 
 	@Override
 	public List<CustomerTO> getCustomersByCity(String city) {
-		String sql="select * from customers where city=?";
+		String sql="select * from CUSTOMER where city=?";
 		Object args[]= {city};
 		List list=jdbcTemp.query(sql, args,new CustomerRowMapper());
 		return list;
@@ -42,7 +42,7 @@ public class JdbcCustomerDAO implements CustomerDAO {
 	
 	@Override
 	public int getCustomerCount() {
-		String sql="select count(*) from customers";
+		String sql="select count(*) from CUSTOMER";
 		Object args[]= {null};
 		Integer count=jdbcTemp.queryForObject(sql, args, Integer.class);
 		return count.intValue();
@@ -51,7 +51,7 @@ public class JdbcCustomerDAO implements CustomerDAO {
 	
 	@Override
 	public Long getCustomerPhoneByEmail(String email) {
-		String sql="select phone from customers where email=?";
+		String sql="select phone from CUSTOMER where email=?";
 		Object args[]= {email};
 		Long phone=jdbcTemp.queryForObject(sql, args, Long.class);
 		return phone;
@@ -61,7 +61,7 @@ public class JdbcCustomerDAO implements CustomerDAO {
 	
 	@Override
 	public String getCustomerCityByEmail(String email) {
-		String sql="select city from customers where email=?";
+		String sql="select city from CUSTOMER where email=?";
 		Object args[]= {email};
 		String city=jdbcTemp.queryForObject(sql, args, String.class);
 		return city;
@@ -69,7 +69,7 @@ public class JdbcCustomerDAO implements CustomerDAO {
 
 	@Override
 	public CustomerTO getCustomerByEmail(String email) {
-		String sql="select * from customers where email=?";
+		String sql="select * from CUSTOMER where email=?";
 		Object args[]= {email};
 		CustomerTO cto=(CustomerTO)jdbcTemp.queryForObject(sql, args,new  CustomerRowMapper());
 		return cto;

@@ -16,38 +16,38 @@ public class Lab42 {
 		CustomerDAO cdao = (CustomerDAO) ctx.getBean("cdao");
 
 		// 1. getCustomerByCid
-		System.out.println("get customers by cid");
+		System.out.println("get CUSTOMER by cid");
 		CustomerTO cto = cdao.getCustomerByCid(6);
 		System.out.println(cto);
 
 		// getAllCustomers
-		System.out.println("get  all customers");
+		System.out.println("get  all CUSTOMER");
 		List<CustomerTO> list = cdao.getAllCustomers();
 		System.out.println(list);
 
 		// get Customers by email
-		System.out.println("get  customers by email");
+		System.out.println("get  CUSTOMER by email");
 		CustomerTO ctoe = cdao.getCustomerByEmail("manjit@waikhom.in");
 		System.out.println(ctoe);
 
 		// get Customers by city
-		System.out.println("get  customers by city");
+		System.out.println("get  CUSTOMER by city");
 		List<CustomerTO> ctoc = cdao.getCustomersByCity("Imphal");
 		System.out.println(ctoc);
 
 		// get Customers count
-		/*System.out.println("get  customers count");
+		/*System.out.println("get  CUSTOMER count");
 		int count = cdao.getCustomerCount();
 		System.out.println(count);
 */
 		// get Customers city by email
-		System.out.println("get  Customer City By Email");
+		System.out.println("get  CUSTOMER City By Email");
 		String citye= cdao.getCustomerCityByEmail("joe@gmail.com");
 		System.out.println(citye);
 		
 		
 		// get Customers phone by email
-		System.out.println("get  Customer phone By Email");
+		System.out.println("get  CUSTOMER phone By Email");
 		long phone= cdao.getCustomerPhoneByEmail("mon@gmail.com");
 		System.out.println(phone);
 
